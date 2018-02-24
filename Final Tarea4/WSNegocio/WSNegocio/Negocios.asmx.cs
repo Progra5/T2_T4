@@ -142,10 +142,10 @@ namespace WSNegocio
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 
-        /*public void getCuerpos()
+        public void getCuerpos()
         {
             Context.Response.Write(consultarCuerpo());
-        }*/
+        }
         public string consultarCuerpo()
         {
             try
