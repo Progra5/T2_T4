@@ -1,0 +1,14 @@
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll.config
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.pdb
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
+c:\users\progra\documents\visual studio 2013\Projects\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll.config
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\bin\WSBaseDatos.pdb
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\bin\Newtonsoft.Json.xml
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.csprojResolveAssemblyReference.cache
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSBaseDatos\WSBaseDatos\obj\Debug\WSBaseDatos.pdb

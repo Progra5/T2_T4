@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CuerpoCeleste">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descubridor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="archivos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CuerpoCelesteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CuerpoCelesteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="asociar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCuerpo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAsociado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="asociarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="asociarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarTipo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertarTipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertarTipoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getConsultarTipo">
+        <s:complexType />
+      </s:element>
+      <s:element name="getConsultarTipoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCuerpos">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCuerposResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CuerpoCelesteSoapIn">
+    <wsdl:part name="parameters" element="tns:CuerpoCeleste" />
+  </wsdl:message>
+  <wsdl:message name="CuerpoCelesteSoapOut">
+    <wsdl:part name="parameters" element="tns:CuerpoCelesteResponse" />
+  </wsdl:message>
+  <wsdl:message name="asociarSoapIn">
+    <wsdl:part name="parameters" element="tns:asociar" />
+  </wsdl:message>
+  <wsdl:message name="asociarSoapOut">
+    <wsdl:part name="parameters" element="tns:asociarResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertarTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:insertarTipo" />
+  </wsdl:message>
+  <wsdl:message name="insertarTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:insertarTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getConsultarTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:getConsultarTipo" />
+  </wsdl:message>
+  <wsdl:message name="getConsultarTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:getConsultarTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCuerposSoapIn">
+    <wsdl:part name="parameters" element="tns:getCuerpos" />
+  </wsdl:message>
+  <wsdl:message name="getCuerposSoapOut">
+    <wsdl:part name="parameters" element="tns:getCuerposResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NegociosSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CuerpoCeleste">
+      <wsdl:input message="tns:CuerpoCelesteSoapIn" />
+      <wsdl:output message="tns:CuerpoCelesteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="asociar">
+      <wsdl:input message="tns:asociarSoapIn" />
+      <wsdl:output message="tns:asociarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarTipo">
+      <wsdl:input message="tns:insertarTipoSoapIn" />
+      <wsdl:output message="tns:insertarTipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getConsultarTipo">
+      <wsdl:input message="tns:getConsultarTipoSoapIn" />
+      <wsdl:output message="tns:getConsultarTipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCuerpos">
+      <wsdl:input message="tns:getCuerposSoapIn" />
+      <wsdl:output message="tns:getCuerposSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NegociosSoap" type="tns:NegociosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CuerpoCeleste">
+      <soap:operation soapAction="http://tempuri.org/CuerpoCeleste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asociar">
+      <soap:operation soapAction="http://tempuri.org/asociar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarTipo">
+      <soap:operation soapAction="http://tempuri.org/insertarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConsultarTipo">
+      <soap:operation soapAction="http://tempuri.org/getConsultarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCuerpos">
+      <soap:operation soapAction="http://tempuri.org/getCuerpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NegociosSoap12" type="tns:NegociosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CuerpoCeleste">
+      <soap12:operation soapAction="http://tempuri.org/CuerpoCeleste" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asociar">
+      <soap12:operation soapAction="http://tempuri.org/asociar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarTipo">
+      <soap12:operation soapAction="http://tempuri.org/insertarTipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getConsultarTipo">
+      <soap12:operation soapAction="http://tempuri.org/getConsultarTipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCuerpos">
+      <soap12:operation soapAction="http://tempuri.org/getCuerpos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Negocios">
+    <wsdl:port name="NegociosSoap" binding="tns:NegociosSoap">
+      <soap:address location="http://localhost:50363/Negocios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NegociosSoap12" binding="tns:NegociosSoap12">
+      <soap12:address location="http://localhost:50363/Negocios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

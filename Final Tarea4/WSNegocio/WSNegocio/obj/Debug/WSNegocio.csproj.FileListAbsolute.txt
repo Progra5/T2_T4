@@ -1,0 +1,13 @@
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\bin\WSNegocio.dll.config
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\bin\WSNegocio.dll
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\bin\WSNegocio.pdb
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
+c:\users\progra\documents\visual studio 2013\Projects\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.dll.config
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.pdb
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.Json.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
+F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb

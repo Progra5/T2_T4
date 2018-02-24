@@ -1,0 +1,85 @@
+﻿html{
+    background-color: rgba(228, 228, 228, 0.50);
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-family: Arial, helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: normal;
+	line-height: 20px;
+}
+p{
+    margin: 0 auto;
+}
+.parallax {
+    /*margin: 0px;*/
+    padding: 10px 30px;
+	background: url('space.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 50px;
+	font-size: 100px;
+	text-align: center;
+}
+.parallax1{
+    /*margin: 0px;*/
+    padding: 10px 30px;
+	background: url('space.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 500px;
+	font-size: 100px;
+	text-align: center;
+}
+#MultiView1{
+    /*background-color: rgba(228, 228, 228, 0.37);*/
+    margin: 0 auto;
+    height: 700px;
+    opacity:0.8;
+}
+#View1{
+    opacity:0.6;
+}
+#form1 {
+    /*background-color: rgba(228, 228, 228, 0.37);*/
+    margin: 0px;
+    padding-left:0px;
+    height: 100%;
+    width: 100%;
+    background-size:cover;
+}
+body {
+    /*background-color: rgba(0, 0, 0, 0.35);*
+    background-color:rgba(0, 0, 0, 0.8);*/
+    background-size:cover;
+    max-width: 100%;
+    min-width: 400px;
+    height:100%;
+    color:white;
+}
+/*
+#tabla{
+    padding-right: 15%;
+    width:50%;
+    margin-left: 390px;
+}*/
+#contenedor{
+    width:100%;
+    height:100%;
+    background-color:rgb(46, 46, 46);
+    opacity:1;
+}
+#Button1:hover{
+    font-size: 13pt;
+    background-color:rgb(46, 45, 45);
+}
+#Button2:hover{
+    font-size: 13pt;
+    background-color:rgb(46, 45, 45);
+}
+#Button3:hover{
+    font-size: 13pt;
+    background-color:rgb(46, 45, 45);
+}
