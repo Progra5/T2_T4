@@ -152,7 +152,7 @@ namespace WSNegocio
 
                 string txt = (WSBaseDatos.ConsultaCuerpos());
 
-                /*DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
                 string salida = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -160,8 +160,8 @@ namespace WSNegocio
                     {
                         salida = salida + " - " + dt.Columns[j].ColumnName.ToString() + " : " + Convert.ToString(dt.Rows[i][j].ToString());
                     }
-                }*/
-                return txt;
+                }
+                return salida;
             }
             catch (Exception)
             {
