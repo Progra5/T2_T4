@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Web.Script;
 using Astronomia.SRNegocio;
 using System.Data;
+using Newtonsoft.Json;
 
 namespace Astronomia
 {
@@ -20,7 +21,7 @@ namespace Astronomia
             ddlCuerposCelestes2.Items.Clear();
             ddlTipoRelacion.Items.Clear();
 
-            string salida = WSNegocios.consultarCuerpo();
+            string salida = WSNegocios.consultaCuerpos();
 
             string[] vec = salida.Split('+').ToArray();
 

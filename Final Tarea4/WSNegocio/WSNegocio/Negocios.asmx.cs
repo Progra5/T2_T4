@@ -18,7 +18,7 @@ namespace WSNegocio
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class Negocios : System.Web.Services.WebService
     {
         [WebMethod]
@@ -140,12 +140,10 @@ namespace WSNegocio
         }
 
         [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-
-        public void getCuerpos()
+        /*public void getCuerpos()
         {
             Context.Response.Write(consultarCuerpo());
-        }
+        }*/
         public string consultarCuerpo()
         {
             try
@@ -154,7 +152,7 @@ namespace WSNegocio
 
                 string txt = (WSBaseDatos.ConsultaCuerpos());
 
-                DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+                /*DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
                 string salida = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -162,8 +160,8 @@ namespace WSNegocio
                     {
                         salida = salida + " - " + dt.Columns[j].ColumnName.ToString() + " : " + Convert.ToString(dt.Rows[i][j].ToString());
                     }
-                }
-                return salida;
+                }*/
+                return txt;
             }
             catch (Exception)
             {
