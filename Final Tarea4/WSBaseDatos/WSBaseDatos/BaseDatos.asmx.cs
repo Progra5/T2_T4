@@ -53,7 +53,7 @@ namespace WSBaseDatos
             {
                 cn.Close();
                 comando.Dispose();
-                return 0;
+                return "";
             }
         }
 
@@ -98,8 +98,6 @@ namespace WSBaseDatos
 
                     string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
 
-                    
-                    
                     return txt;
                 }
             }
@@ -125,30 +123,6 @@ namespace WSBaseDatos
                     da.Fill(dt);
                     cn.Close();
                     string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
-
-                    /*for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        string txtCol = "";
-                        for (int j = 0; j < dt.Columns.Count; j++)
-                        {
-                            if (j == 0)
-                            {
-                                txtCol = dt.Rows[i][j].ToString();
-                            }
-                            else
-                            {
-                                txtCol = txtCol + "," + dt.Rows[i][j].ToString();
-                            }
-                        }
-                        if (i == 0)
-                        {
-                            txt = txtCol;
-                        }
-                        else
-                        {
-                            txt = txt + "+" + txtCol;
-                        }
-                    }*/
 
                     return txt;
                 }
@@ -183,6 +157,32 @@ namespace WSBaseDatos
                 cn.Close();
                 comando.Dispose();
                 return ex.ToString();
+            }
+        }
+
+        [WebMethod]
+        public string consultarTotalCuerpos()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (cn = new SqlConnection(Conexion))
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand("SELTCUE", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    cn.Close();
+                    string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
+
+                    return txt;
+                }
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                return "";
             }
         }
 

@@ -98,11 +98,8 @@
                         </table>
 
                     </div>
-                    <asp:Panel ID="Panel1" runat="server" Width="1000px">
-                        <br />
-                        <br />
-                        <br />
-                        <br />
+                    <asp:Panel ID="Panel1" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                        <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
                 </asp:View>
                 <asp:View ID="View2" runat="server">
@@ -147,11 +144,8 @@
                                 </tr>
                             </table>
                         </div>
-                    <asp:Panel ID="Panel2" runat="server" Width="1000px">
-                        <br />
-                        <br />
-                        <br />
-                        <br />
+                    <asp:Panel ID="Panel2" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                        <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
                     </asp:Panel>
 
                 </asp:View>
@@ -178,15 +172,8 @@
                                     </td>
                                 </tr>
                             </table>
-                        <asp:Panel ID="Panel3" runat="server" Width="1000px">
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
+                        <asp:Panel ID="Panel3" runat="server" Width="1000px" Height="500px" ScrollBars="Vertical">
+                            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                         </asp:Panel>
                         </div>
                 </asp:View>

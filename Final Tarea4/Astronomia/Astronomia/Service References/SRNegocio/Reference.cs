@@ -9,18 +9,72 @@
 //------------------------------------------------------------------------------
 
 namespace Astronomia.SRNegocio {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StringBuilder", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class StringBuilder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int CapacityField;
+        
+        private int LengthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Capacity {
+            get {
+                return this.CapacityField;
+            }
+            set {
+                if ((this.CapacityField.Equals(value) != true)) {
+                    this.CapacityField = value;
+                    this.RaisePropertyChanged("Capacity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Length {
+            get {
+                return this.LengthField;
+            }
+            set {
+                if ((this.LengthField.Equals(value) != true)) {
+                    this.LengthField = value;
+                    this.RaisePropertyChanged("Length");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SRNegocio.NegociosSoap")]
     public interface NegociosSoap {
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento HelloWorldResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        Astronomia.SRNegocio.HelloWorldResponse HelloWorld(Astronomia.SRNegocio.HelloWorldRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<Astronomia.SRNegocio.HelloWorldResponse> HelloWorldAsync(Astronomia.SRNegocio.HelloWorldRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento nombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CuerpoCeleste", ReplyAction="*")]
@@ -56,67 +110,20 @@ namespace Astronomia.SRNegocio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarCuerpo", ReplyAction="*")]
         System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarCuerpoResponse> consultarCuerpoAsync(Astronomia.SRNegocio.consultarCuerpoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public Astronomia.SRNegocio.HelloWorldRequestBody Body;
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento crearTablaTiposResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/crearTablaTipos", ReplyAction="*")]
+        Astronomia.SRNegocio.crearTablaTiposResponse crearTablaTipos(Astronomia.SRNegocio.crearTablaTiposRequest request);
         
-        public HelloWorldRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/crearTablaTipos", ReplyAction="*")]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaTiposResponse> crearTablaTiposAsync(Astronomia.SRNegocio.crearTablaTiposRequest request);
         
-        public HelloWorldRequest(Astronomia.SRNegocio.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento crearTablaCuerposResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/crearTablaCuerpos", ReplyAction="*")]
+        Astronomia.SRNegocio.crearTablaCuerposResponse crearTablaCuerpos(Astronomia.SRNegocio.crearTablaCuerposRequest request);
         
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Astronomia.SRNegocio.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(Astronomia.SRNegocio.HelloWorldResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody() {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/crearTablaCuerpos", ReplyAction="*")]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaCuerposResponse> crearTablaCuerposAsync(Astronomia.SRNegocio.crearTablaCuerposRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -461,6 +468,128 @@ namespace Astronomia.SRNegocio {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class crearTablaTiposRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="crearTablaTipos", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.crearTablaTiposRequestBody Body;
+        
+        public crearTablaTiposRequest() {
+        }
+        
+        public crearTablaTiposRequest(Astronomia.SRNegocio.crearTablaTiposRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class crearTablaTiposRequestBody {
+        
+        public crearTablaTiposRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class crearTablaTiposResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="crearTablaTiposResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.crearTablaTiposResponseBody Body;
+        
+        public crearTablaTiposResponse() {
+        }
+        
+        public crearTablaTiposResponse(Astronomia.SRNegocio.crearTablaTiposResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class crearTablaTiposResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Astronomia.SRNegocio.StringBuilder crearTablaTiposResult;
+        
+        public crearTablaTiposResponseBody() {
+        }
+        
+        public crearTablaTiposResponseBody(Astronomia.SRNegocio.StringBuilder crearTablaTiposResult) {
+            this.crearTablaTiposResult = crearTablaTiposResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class crearTablaCuerposRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="crearTablaCuerpos", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.crearTablaCuerposRequestBody Body;
+        
+        public crearTablaCuerposRequest() {
+        }
+        
+        public crearTablaCuerposRequest(Astronomia.SRNegocio.crearTablaCuerposRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class crearTablaCuerposRequestBody {
+        
+        public crearTablaCuerposRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class crearTablaCuerposResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="crearTablaCuerposResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.crearTablaCuerposResponseBody Body;
+        
+        public crearTablaCuerposResponse() {
+        }
+        
+        public crearTablaCuerposResponse(Astronomia.SRNegocio.crearTablaCuerposResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class crearTablaCuerposResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Astronomia.SRNegocio.StringBuilder crearTablaCuerposResult;
+        
+        public crearTablaCuerposResponseBody() {
+        }
+        
+        public crearTablaCuerposResponseBody(Astronomia.SRNegocio.StringBuilder crearTablaCuerposResult) {
+            this.crearTablaCuerposResult = crearTablaCuerposResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface NegociosSoapChannel : Astronomia.SRNegocio.NegociosSoap, System.ServiceModel.IClientChannel {
     }
@@ -486,29 +615,6 @@ namespace Astronomia.SRNegocio {
         
         public NegociosSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Astronomia.SRNegocio.HelloWorldResponse Astronomia.SRNegocio.NegociosSoap.HelloWorld(Astronomia.SRNegocio.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
-        }
-        
-        public string HelloWorld() {
-            Astronomia.SRNegocio.HelloWorldRequest inValue = new Astronomia.SRNegocio.HelloWorldRequest();
-            inValue.Body = new Astronomia.SRNegocio.HelloWorldRequestBody();
-            Astronomia.SRNegocio.HelloWorldResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Astronomia.SRNegocio.HelloWorldResponse> Astronomia.SRNegocio.NegociosSoap.HelloWorldAsync(Astronomia.SRNegocio.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Astronomia.SRNegocio.HelloWorldResponse> HelloWorldAsync() {
-            Astronomia.SRNegocio.HelloWorldRequest inValue = new Astronomia.SRNegocio.HelloWorldRequest();
-            inValue.Body = new Astronomia.SRNegocio.HelloWorldRequestBody();
-            return ((Astronomia.SRNegocio.NegociosSoap)(this)).HelloWorldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -638,6 +744,52 @@ namespace Astronomia.SRNegocio {
             Astronomia.SRNegocio.consultarCuerpoRequest inValue = new Astronomia.SRNegocio.consultarCuerpoRequest();
             inValue.Body = new Astronomia.SRNegocio.consultarCuerpoRequestBody();
             return ((Astronomia.SRNegocio.NegociosSoap)(this)).consultarCuerpoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Astronomia.SRNegocio.crearTablaTiposResponse Astronomia.SRNegocio.NegociosSoap.crearTablaTipos(Astronomia.SRNegocio.crearTablaTiposRequest request) {
+            return base.Channel.crearTablaTipos(request);
+        }
+        
+        public Astronomia.SRNegocio.StringBuilder crearTablaTipos() {
+            Astronomia.SRNegocio.crearTablaTiposRequest inValue = new Astronomia.SRNegocio.crearTablaTiposRequest();
+            inValue.Body = new Astronomia.SRNegocio.crearTablaTiposRequestBody();
+            Astronomia.SRNegocio.crearTablaTiposResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).crearTablaTipos(inValue);
+            return retVal.Body.crearTablaTiposResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaTiposResponse> Astronomia.SRNegocio.NegociosSoap.crearTablaTiposAsync(Astronomia.SRNegocio.crearTablaTiposRequest request) {
+            return base.Channel.crearTablaTiposAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaTiposResponse> crearTablaTiposAsync() {
+            Astronomia.SRNegocio.crearTablaTiposRequest inValue = new Astronomia.SRNegocio.crearTablaTiposRequest();
+            inValue.Body = new Astronomia.SRNegocio.crearTablaTiposRequestBody();
+            return ((Astronomia.SRNegocio.NegociosSoap)(this)).crearTablaTiposAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Astronomia.SRNegocio.crearTablaCuerposResponse Astronomia.SRNegocio.NegociosSoap.crearTablaCuerpos(Astronomia.SRNegocio.crearTablaCuerposRequest request) {
+            return base.Channel.crearTablaCuerpos(request);
+        }
+        
+        public Astronomia.SRNegocio.StringBuilder crearTablaCuerpos() {
+            Astronomia.SRNegocio.crearTablaCuerposRequest inValue = new Astronomia.SRNegocio.crearTablaCuerposRequest();
+            inValue.Body = new Astronomia.SRNegocio.crearTablaCuerposRequestBody();
+            Astronomia.SRNegocio.crearTablaCuerposResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).crearTablaCuerpos(inValue);
+            return retVal.Body.crearTablaCuerposResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaCuerposResponse> Astronomia.SRNegocio.NegociosSoap.crearTablaCuerposAsync(Astronomia.SRNegocio.crearTablaCuerposRequest request) {
+            return base.Channel.crearTablaCuerposAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.crearTablaCuerposResponse> crearTablaCuerposAsync() {
+            Astronomia.SRNegocio.crearTablaCuerposRequest inValue = new Astronomia.SRNegocio.crearTablaCuerposRequest();
+            inValue.Body = new Astronomia.SRNegocio.crearTablaCuerposRequestBody();
+            return ((Astronomia.SRNegocio.NegociosSoap)(this)).crearTablaCuerposAsync(inValue);
         }
     }
 }

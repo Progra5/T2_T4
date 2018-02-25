@@ -8,6 +8,7 @@ using System.Web.Services;
 using System.Web.Script.Services;
 using Newtonsoft.Json;
 using WSNegocio.SRBaseDatos;
+using Negocios;
 
 namespace WSNegocio
 {
@@ -28,7 +29,9 @@ namespace WSNegocio
             {
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                int resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, Encoding.UTF8.GetBytes(archivos));
+                string resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, Encoding.UTF8.GetBytes(archivos));
+
+                return resultado;
             }
             catch (Exception ex)
             {
@@ -149,6 +152,56 @@ namespace WSNegocio
             catch (Exception)
             {
                 return "";
+            }
+        }
+
+        [WebMethod]
+        public StringBuilder crearTablaTipos()
+        {
+            try
+            {
+                CrearTabla ct = new CrearTabla();
+
+                WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
+
+                string txt = WSBaseDatos.consultarTipos();
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+
+                StringBuilder html = new StringBuilder();
+
+                html = ct.crear(dt);
+
+                return html;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        public StringBuilder crearTablaCuerpos()
+        {
+            try
+            {
+                CrearTabla ct = new CrearTabla();
+
+                WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
+
+                string txt = WSBaseDatos.consultarTotalCuerpos();
+
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+
+                StringBuilder html = new StringBuilder();
+
+                html = ct.crear(dt);
+
+                return html;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }

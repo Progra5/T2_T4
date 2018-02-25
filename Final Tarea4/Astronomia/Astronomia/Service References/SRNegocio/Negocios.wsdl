@@ -2,16 +2,6 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="HelloWorld">
-        <s:complexType />
-      </s:element>
-      <s:element name="HelloWorldResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="CuerpoCeleste">
         <s:complexType>
           <s:sequence>
@@ -78,14 +68,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="crearTablaTipos">
+        <s:complexType />
+      </s:element>
+      <s:element name="crearTablaTiposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTablaTiposResult" type="tns:StringBuilder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StringBuilder">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Capacity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTablaCuerpos">
+        <s:complexType />
+      </s:element>
+      <s:element name="crearTablaCuerposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTablaCuerposResult" type="tns:StringBuilder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="HelloWorldSoapIn">
-    <wsdl:part name="parameters" element="tns:HelloWorld" />
-  </wsdl:message>
-  <wsdl:message name="HelloWorldSoapOut">
-    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
-  </wsdl:message>
   <wsdl:message name="CuerpoCelesteSoapIn">
     <wsdl:part name="parameters" element="tns:CuerpoCeleste" />
   </wsdl:message>
@@ -116,11 +126,19 @@
   <wsdl:message name="consultarCuerpoSoapOut">
     <wsdl:part name="parameters" element="tns:consultarCuerpoResponse" />
   </wsdl:message>
+  <wsdl:message name="crearTablaTiposSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTablaTipos" />
+  </wsdl:message>
+  <wsdl:message name="crearTablaTiposSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTablaTiposResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearTablaCuerposSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTablaCuerpos" />
+  </wsdl:message>
+  <wsdl:message name="crearTablaCuerposSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTablaCuerposResponse" />
+  </wsdl:message>
   <wsdl:portType name="NegociosSoap">
-    <wsdl:operation name="HelloWorld">
-      <wsdl:input message="tns:HelloWorldSoapIn" />
-      <wsdl:output message="tns:HelloWorldSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="CuerpoCeleste">
       <wsdl:input message="tns:CuerpoCelesteSoapIn" />
       <wsdl:output message="tns:CuerpoCelesteSoapOut" />
@@ -141,18 +159,17 @@
       <wsdl:input message="tns:consultarCuerpoSoapIn" />
       <wsdl:output message="tns:consultarCuerpoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="crearTablaTipos">
+      <wsdl:input message="tns:crearTablaTiposSoapIn" />
+      <wsdl:output message="tns:crearTablaTiposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crearTablaCuerpos">
+      <wsdl:input message="tns:crearTablaCuerposSoapIn" />
+      <wsdl:output message="tns:crearTablaCuerposSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NegociosSoap" type="tns:NegociosSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="CuerpoCeleste">
       <soap:operation soapAction="http://tempuri.org/CuerpoCeleste" style="document" />
       <wsdl:input>
@@ -198,18 +215,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="crearTablaTipos">
+      <soap:operation soapAction="http://tempuri.org/crearTablaTipos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearTablaCuerpos">
+      <soap:operation soapAction="http://tempuri.org/crearTablaCuerpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NegociosSoap12" type="tns:NegociosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="HelloWorld">
-      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="CuerpoCeleste">
       <soap12:operation soapAction="http://tempuri.org/CuerpoCeleste" style="document" />
       <wsdl:input>
@@ -248,6 +274,24 @@
     </wsdl:operation>
     <wsdl:operation name="consultarCuerpo">
       <soap12:operation soapAction="http://tempuri.org/consultarCuerpo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearTablaTipos">
+      <soap12:operation soapAction="http://tempuri.org/crearTablaTipos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearTablaCuerpos">
+      <soap12:operation soapAction="http://tempuri.org/crearTablaCuerpos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

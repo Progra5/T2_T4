@@ -13,13 +13,38 @@ namespace Astronomia
     public partial class _Default : System.Web.UI.Page
     {
         public static Astronomia.SRNegocio.NegociosSoapClient WSNegocios = new Astronomia.SRNegocio.NegociosSoapClient();
+        public static Astronomia.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new Astronomia.SRBaseDatos.BaseDatosSoapClient();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 actualizar();
+
+                StringBuilder html = WSNegocios.crearTablaTipos();
+
+                PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });//tipo relacion
+                //PlaceHolder2.Controls.Add(new Literal { Text = WSNegocios.crearTablaTipos().ToString() }); // asociados
+                PlaceHolder3.Controls.Add(new Literal { Text = WSNegocios.crearTablaCuerpos().ToString() });//cuerpos celestes
+
+                try
+                {
+                    CrearTabla ct = new CrearTabla();
+
+                    string txt = WSBaseDatos.consultarTotalCuerpos();
+
+                    DataTable dt = (DataTable)JsonConvert.DeserializeObject(txt, (typeof(DataTable)));
+
+                    StringBuilder html = new StringBuilder();
+
+                    html = ct.crear(dt);
+                }
+                catch (Exception)
+                {
+                }
+
             }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
