@@ -32,31 +32,22 @@ namespace WSBaseDatos
         }
 
         [WebMethod]
-        public int InsertarCuerpo(string nombre, string descubridor)
+        public string InsertarCuerpo(string nombre, string descubridor, byte[] archivo)
         {
-            int numero = 0;
             try //protejemos la consulta
             {
                 using (SqlConnection cn = new SqlConnection(Conexion))
-                using (SqlCommand cmd = new SqlCommand("INRCUE", cn))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@_Nombre", SqlDbType.VarChar, 100);
-                    cmd.Parameters.Add("@_Descubridor", SqlDbType.VarChar, 100);
-                    cmd.Parameters.Add("@Salida", SqlDbType.BigInt).Direction = ParameterDirection.Output;
-
-                    cmd.Parameters["@_Nombre"].Value = nombre;
-                    cmd.Parameters["@_Descubridor"].Value = descubridor;
-
                     cn.Open();
+                    SqlCommand cmd = new SqlCommand("INSTIP", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@_Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@_Descubridor", descubridor);
+                    cmd.Parameters.AddWithValue("@_FOTOGRAFIA", archivo);
                     cmd.ExecuteNonQuery();
-
-                    numero = Convert.ToInt32(cmd.Parameters["@Salida"].Value);
-
                     cn.Close();
                 }
-                return numero;
+                return "";
             }
             catch (Exception ex)
             {
@@ -91,31 +82,6 @@ namespace WSBaseDatos
         }
 
         [WebMethod]
-        public string InsertarFoto(int num, byte[] archivo)
-        {
-            try //protejemos la consulta
-            {
-                using (SqlConnection cn = new SqlConnection(Conexion))
-                {
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand("INRFOTO", cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID", num);
-                    cmd.Parameters.AddWithValue("@_FOTO", archivo);
-                    cmd.ExecuteNonQuery();
-                    cn.Close();
-                }
-                return "";
-            }
-            catch (Exception ex)
-            {
-                cn.Close();
-                comando.Dispose();
-                return ex.ToString();
-            }
-        }
-
-        [WebMethod]
         public string ConsultaCuerpos()
         {
             DataTable dt = new DataTable();
@@ -132,29 +98,7 @@ namespace WSBaseDatos
 
                     string txt = Newtonsoft.Json.JsonConvert.SerializeObject(dt);
 
-                    /*for (int i = 0; i < dt.Rows.Count; i++)
-                    {
-                        string txtCol = "";
-                        for (int j = 0;  j < dt.Columns.Count;  j++)
-                        {
-                            if (j == 0)
-                            {
-                                txtCol = dt.Rows[i][j].ToString();
-                            }
-                            else
-                            {
-                                txtCol = txtCol + "," + dt.Rows[i][j].ToString();
-                            }
-                        }
-                        if (i == 0)
-                        {
-                            txt = txtCol;
-                        }
-                        else
-                        {
-                            txt = txt + "+" + txtCol;
-                        }
-                    }*/
+                    
                     
                     return txt;
                 }

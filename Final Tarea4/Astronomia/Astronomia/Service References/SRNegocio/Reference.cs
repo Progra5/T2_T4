@@ -43,17 +43,19 @@ namespace Astronomia.SRNegocio {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/insertarTipo", ReplyAction="*")]
         System.Threading.Tasks.Task<Astronomia.SRNegocio.insertarTipoResponse> insertarTipoAsync(Astronomia.SRNegocio.insertarTipoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getConsultarTipo", ReplyAction="*")]
-        void getConsultarTipo();
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento consultarTipoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTipo", ReplyAction="*")]
+        Astronomia.SRNegocio.consultarTipoResponse consultarTipo(Astronomia.SRNegocio.consultarTipoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getConsultarTipo", ReplyAction="*")]
-        System.Threading.Tasks.Task getConsultarTipoAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarTipo", ReplyAction="*")]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarTipoResponse> consultarTipoAsync(Astronomia.SRNegocio.consultarTipoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getCuerpos", ReplyAction="*")]
-        void getCuerpos();
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento consultarCuerpoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarCuerpo", ReplyAction="*")]
+        Astronomia.SRNegocio.consultarCuerpoResponse consultarCuerpo(Astronomia.SRNegocio.consultarCuerpoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/getCuerpos", ReplyAction="*")]
-        System.Threading.Tasks.Task getCuerposAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultarCuerpo", ReplyAction="*")]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarCuerpoResponse> consultarCuerpoAsync(Astronomia.SRNegocio.consultarCuerpoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -337,6 +339,128 @@ namespace Astronomia.SRNegocio {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarTipoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarTipo", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.consultarTipoRequestBody Body;
+        
+        public consultarTipoRequest() {
+        }
+        
+        public consultarTipoRequest(Astronomia.SRNegocio.consultarTipoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class consultarTipoRequestBody {
+        
+        public consultarTipoRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarTipoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarTipoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.consultarTipoResponseBody Body;
+        
+        public consultarTipoResponse() {
+        }
+        
+        public consultarTipoResponse(Astronomia.SRNegocio.consultarTipoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class consultarTipoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string consultarTipoResult;
+        
+        public consultarTipoResponseBody() {
+        }
+        
+        public consultarTipoResponseBody(string consultarTipoResult) {
+            this.consultarTipoResult = consultarTipoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarCuerpoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarCuerpo", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.consultarCuerpoRequestBody Body;
+        
+        public consultarCuerpoRequest() {
+        }
+        
+        public consultarCuerpoRequest(Astronomia.SRNegocio.consultarCuerpoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class consultarCuerpoRequestBody {
+        
+        public consultarCuerpoRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class consultarCuerpoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="consultarCuerpoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Astronomia.SRNegocio.consultarCuerpoResponseBody Body;
+        
+        public consultarCuerpoResponse() {
+        }
+        
+        public consultarCuerpoResponse(Astronomia.SRNegocio.consultarCuerpoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class consultarCuerpoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string consultarCuerpoResult;
+        
+        public consultarCuerpoResponseBody() {
+        }
+        
+        public consultarCuerpoResponseBody(string consultarCuerpoResult) {
+            this.consultarCuerpoResult = consultarCuerpoResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface NegociosSoapChannel : Astronomia.SRNegocio.NegociosSoap, System.ServiceModel.IClientChannel {
     }
@@ -470,20 +594,50 @@ namespace Astronomia.SRNegocio {
             return ((Astronomia.SRNegocio.NegociosSoap)(this)).insertarTipoAsync(inValue);
         }
         
-        public void getConsultarTipo() {
-            base.Channel.getConsultarTipo();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Astronomia.SRNegocio.consultarTipoResponse Astronomia.SRNegocio.NegociosSoap.consultarTipo(Astronomia.SRNegocio.consultarTipoRequest request) {
+            return base.Channel.consultarTipo(request);
         }
         
-        public System.Threading.Tasks.Task getConsultarTipoAsync() {
-            return base.Channel.getConsultarTipoAsync();
+        public string consultarTipo() {
+            Astronomia.SRNegocio.consultarTipoRequest inValue = new Astronomia.SRNegocio.consultarTipoRequest();
+            inValue.Body = new Astronomia.SRNegocio.consultarTipoRequestBody();
+            Astronomia.SRNegocio.consultarTipoResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).consultarTipo(inValue);
+            return retVal.Body.consultarTipoResult;
         }
         
-        public void getCuerpos() {
-            base.Channel.getCuerpos();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarTipoResponse> Astronomia.SRNegocio.NegociosSoap.consultarTipoAsync(Astronomia.SRNegocio.consultarTipoRequest request) {
+            return base.Channel.consultarTipoAsync(request);
         }
         
-        public System.Threading.Tasks.Task getCuerposAsync() {
-            return base.Channel.getCuerposAsync();
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarTipoResponse> consultarTipoAsync() {
+            Astronomia.SRNegocio.consultarTipoRequest inValue = new Astronomia.SRNegocio.consultarTipoRequest();
+            inValue.Body = new Astronomia.SRNegocio.consultarTipoRequestBody();
+            return ((Astronomia.SRNegocio.NegociosSoap)(this)).consultarTipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Astronomia.SRNegocio.consultarCuerpoResponse Astronomia.SRNegocio.NegociosSoap.consultarCuerpo(Astronomia.SRNegocio.consultarCuerpoRequest request) {
+            return base.Channel.consultarCuerpo(request);
+        }
+        
+        public string consultarCuerpo() {
+            Astronomia.SRNegocio.consultarCuerpoRequest inValue = new Astronomia.SRNegocio.consultarCuerpoRequest();
+            inValue.Body = new Astronomia.SRNegocio.consultarCuerpoRequestBody();
+            Astronomia.SRNegocio.consultarCuerpoResponse retVal = ((Astronomia.SRNegocio.NegociosSoap)(this)).consultarCuerpo(inValue);
+            return retVal.Body.consultarCuerpoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarCuerpoResponse> Astronomia.SRNegocio.NegociosSoap.consultarCuerpoAsync(Astronomia.SRNegocio.consultarCuerpoRequest request) {
+            return base.Channel.consultarCuerpoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Astronomia.SRNegocio.consultarCuerpoResponse> consultarCuerpoAsync() {
+            Astronomia.SRNegocio.consultarCuerpoRequest inValue = new Astronomia.SRNegocio.consultarCuerpoRequest();
+            inValue.Body = new Astronomia.SRNegocio.consultarCuerpoRequestBody();
+            return ((Astronomia.SRNegocio.NegociosSoap)(this)).consultarCuerpoAsync(inValue);
         }
     }
 }

@@ -16,43 +16,10 @@ namespace Astronomia
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlCuerposCelestes1.Items.Clear();
-            ddlCuerposCelestes2.Items.Clear();
-            ddlTipoRelacion.Items.Clear();
-
-            string salida = WSNegocios.consultarCuerpo();
-
-            string[] vec = salida.Split('+').ToArray();
-
-            if (vec[0].ToString() != "")
+            if (!IsPostBack)
             {
-                for (int i = 0; i < vec.Length; i++)
-                {
-                    string[] vec2 = vec[i].Split(',').ToArray();
-
-                    ddlCuerposCelestes1.Items.Add(vec2[1].ToString());
-                    ddlCuerposCelestes1.Items[i].Value = vec2[0].ToString();
-
-                    ddlCuerposCelestes2.Items.Add(vec2[1].ToString());
-                    ddlCuerposCelestes2.Items[i].Value = vec2[0].ToString();
-                }
+                actualizar();
             }
-            string salida2 = WSNegocios.consultarTipo();
-            
-            string[] vect = salida2.Split('+').ToArray();
-
-            if (vect[0].ToString() != "")
-            {
-                for (int j = 0; j < vect.Length; j++)
-                {
-                    string[] vect2 = vect[j].Split(',').ToArray();
-
-                    ddlTipoRelacion.Items.Add(vect2[1].ToString());
-                    ddlTipoRelacion.Items[j].Value = vect2[0].ToString();
-                }
-            }
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -126,6 +93,45 @@ namespace Astronomia
             catch (Exception ex)
             {
                 Label4.Text = "Error";
+            }
+        }
+
+        public void actualizar()
+        {
+            ddlCuerposCelestes1.Items.Clear();
+            ddlCuerposCelestes2.Items.Clear();
+            ddlTipoRelacion.Items.Clear();
+
+            string salida = WSNegocios.consultarCuerpo();
+
+            string[] vec = salida.Split('+').ToArray();
+
+            if (vec[0].ToString() != "")
+            {
+                for (int i = 0; i < vec.Length; i++)
+                {
+                    string[] vec2 = vec[i].Split(',').ToArray();
+
+                    ddlCuerposCelestes1.Items.Add(vec2[1].ToString());
+                    ddlCuerposCelestes1.Items[i].Value = vec2[0].ToString();
+
+                    ddlCuerposCelestes2.Items.Add(vec2[1].ToString());
+                    ddlCuerposCelestes2.Items[i].Value = vec2[0].ToString();
+                }
+            }
+            string salida2 = WSNegocios.consultarTipo();
+
+            string[] vect = salida2.Split('+').ToArray();
+
+            if (vect[0].ToString() != "")
+            {
+                for (int j = 0; j < vect.Length; j++)
+                {
+                    string[] vect2 = vect[j].Split(',').ToArray();
+
+                    ddlTipoRelacion.Items.Add(vect2[1].ToString());
+                    ddlTipoRelacion.Items[j].Value = vect2[0].ToString();
+                }
             }
         }
     }

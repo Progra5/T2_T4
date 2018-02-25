@@ -11,3 +11,11 @@ F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.
 F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
 F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
 F:\Programacion V\Tarea 4\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.dll.config
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.dll
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\WSNegocio.pdb
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.Json.dll
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\bin\Newtonsoft.Json.xml
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.csprojResolveAssemblyReference.cache
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.dll
+C:\Users\progra\Desktop\Programacion 5\T2_T4\Final Tarea4\WSNegocio\WSNegocio\obj\Debug\WSNegocio.pdb

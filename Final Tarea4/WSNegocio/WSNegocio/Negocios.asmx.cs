@@ -22,37 +22,13 @@ namespace WSNegocio
     public class Negocios : System.Web.Services.WebService
     {
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
-
-        [WebMethod]
         public string CuerpoCeleste(string nombre, string descubridor, string archivos)
         {
             try
             {
                 WSNegocio.SRBaseDatos.BaseDatosSoapClient WSBaseDatos = new WSNegocio.SRBaseDatos.BaseDatosSoapClient();
 
-                int resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor);
-
-                if (resultado != 0)
-                {
-                    try
-                    {
-                        WSBaseDatos.InsertarFoto(resultado, Encoding.UTF8.GetBytes(archivos));
-                        return "Los datos se ingresaron correctamente";
-                    }
-                    catch (Exception)
-                    {
-                        return "Ocurrio un error a la hora de insertar las imagenes";
-                    }
-                }
-                else
-                {
-                    return "Ocurrio un error con la inserción de los datos";
-                }
-
+                int resultado = WSBaseDatos.InsertarCuerpo(nombre, descubridor, Encoding.UTF8.GetBytes(archivos));
             }
             catch (Exception ex)
             {
@@ -106,11 +82,6 @@ namespace WSNegocio
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 
-        public void getConsultarTipo()
-        {
-            Context.Response.Write(consultarTipo());
-        }
-
         public string consultarTipo()
         {
             try
@@ -126,9 +97,14 @@ namespace WSNegocio
                 string salida = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    for (int j = 0; j < dt.Columns.Count; j++)
+                    if (i == 0)
                     {
-                        salida = salida + " - " + dt.Columns[j].ColumnName.ToString() + " : " + Convert.ToString(dt.Rows[i][j].ToString());
+                        salida = Convert.ToString(dt.Rows[i][0].ToString()) + "," + Convert.ToString(dt.Rows[i][1].ToString());
+                    }
+                    else
+                    {
+                        salida = salida + "+" + Convert.ToString(dt.Rows[i][0].ToString()) + "," + Convert.ToString(dt.Rows[i][1].ToString());
+
                     }
                 }
                 return salida;
@@ -158,9 +134,14 @@ namespace WSNegocio
                 string salida = "";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    for (int j = 0; j < dt.Columns.Count; j++)
+                    if (i == 0)
                     {
-                        salida = salida + " - " + dt.Columns[j].ColumnName.ToString() + " : " + Convert.ToString(dt.Rows[i][j].ToString());
+                        salida = Convert.ToString(dt.Rows[i][0].ToString()) + "," + Convert.ToString(dt.Rows[i][1].ToString());
+                    }
+                    else
+                    {
+                        salida = salida + "+" + Convert.ToString(dt.Rows[i][0].ToString()) + "," + Convert.ToString(dt.Rows[i][1].ToString());
+
                     }
                 }
                 return salida;

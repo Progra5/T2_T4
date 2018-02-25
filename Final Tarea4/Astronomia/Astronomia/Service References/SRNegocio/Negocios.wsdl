@@ -58,17 +58,25 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getConsultarTipo">
+      <s:element name="consultarTipo">
         <s:complexType />
       </s:element>
-      <s:element name="getConsultarTipoResponse">
+      <s:element name="consultarTipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarTipoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarCuerpo">
         <s:complexType />
       </s:element>
-      <s:element name="getCuerpos">
-        <s:complexType />
-      </s:element>
-      <s:element name="getCuerposResponse">
-        <s:complexType />
+      <s:element name="consultarCuerpoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultarCuerpoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
@@ -96,17 +104,17 @@
   <wsdl:message name="insertarTipoSoapOut">
     <wsdl:part name="parameters" element="tns:insertarTipoResponse" />
   </wsdl:message>
-  <wsdl:message name="getConsultarTipoSoapIn">
-    <wsdl:part name="parameters" element="tns:getConsultarTipo" />
+  <wsdl:message name="consultarTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarTipo" />
   </wsdl:message>
-  <wsdl:message name="getConsultarTipoSoapOut">
-    <wsdl:part name="parameters" element="tns:getConsultarTipoResponse" />
+  <wsdl:message name="consultarTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarTipoResponse" />
   </wsdl:message>
-  <wsdl:message name="getCuerposSoapIn">
-    <wsdl:part name="parameters" element="tns:getCuerpos" />
+  <wsdl:message name="consultarCuerpoSoapIn">
+    <wsdl:part name="parameters" element="tns:consultarCuerpo" />
   </wsdl:message>
-  <wsdl:message name="getCuerposSoapOut">
-    <wsdl:part name="parameters" element="tns:getCuerposResponse" />
+  <wsdl:message name="consultarCuerpoSoapOut">
+    <wsdl:part name="parameters" element="tns:consultarCuerpoResponse" />
   </wsdl:message>
   <wsdl:portType name="NegociosSoap">
     <wsdl:operation name="HelloWorld">
@@ -125,13 +133,13 @@
       <wsdl:input message="tns:insertarTipoSoapIn" />
       <wsdl:output message="tns:insertarTipoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="getConsultarTipo">
-      <wsdl:input message="tns:getConsultarTipoSoapIn" />
-      <wsdl:output message="tns:getConsultarTipoSoapOut" />
+    <wsdl:operation name="consultarTipo">
+      <wsdl:input message="tns:consultarTipoSoapIn" />
+      <wsdl:output message="tns:consultarTipoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="getCuerpos">
-      <wsdl:input message="tns:getCuerposSoapIn" />
-      <wsdl:output message="tns:getCuerposSoapOut" />
+    <wsdl:operation name="consultarCuerpo">
+      <wsdl:input message="tns:consultarCuerpoSoapIn" />
+      <wsdl:output message="tns:consultarCuerpoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NegociosSoap" type="tns:NegociosSoap">
@@ -172,8 +180,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getConsultarTipo">
-      <soap:operation soapAction="http://tempuri.org/getConsultarTipo" style="document" />
+    <wsdl:operation name="consultarTipo">
+      <soap:operation soapAction="http://tempuri.org/consultarTipo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -181,8 +189,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCuerpos">
-      <soap:operation soapAction="http://tempuri.org/getCuerpos" style="document" />
+    <wsdl:operation name="consultarCuerpo">
+      <soap:operation soapAction="http://tempuri.org/consultarCuerpo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -229,8 +237,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getConsultarTipo">
-      <soap12:operation soapAction="http://tempuri.org/getConsultarTipo" style="document" />
+    <wsdl:operation name="consultarTipo">
+      <soap12:operation soapAction="http://tempuri.org/consultarTipo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -238,8 +246,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCuerpos">
-      <soap12:operation soapAction="http://tempuri.org/getCuerpos" style="document" />
+    <wsdl:operation name="consultarCuerpo">
+      <soap12:operation soapAction="http://tempuri.org/consultarCuerpo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

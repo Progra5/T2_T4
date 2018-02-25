@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="91b64cbf-a705-4bf5-8d2c-bc144f89034d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d4a99f1-f661-480c-b77b-feb959188a84" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:50363/Negocios.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Negocios.wsdl" MetadataType="Wsdl" ID="d73ab90f-a8c0-4e25-b21f-e5f996f154e8" SourceId="1" SourceUrl="http://localhost:50363/Negocios.asmx?wsdl" />
-    <MetadataFile FileName="Negocios.disco" MetadataType="Disco" ID="f6465098-a3fc-406d-b224-18014e00c840" SourceId="1" SourceUrl="http://localhost:50363/Negocios.asmx?disco" />
+    <MetadataFile FileName="Negocios.wsdl" MetadataType="Wsdl" ID="24f3a7ee-e19e-4a8d-a4ed-8896bf3eacbd" SourceId="1" SourceUrl="http://localhost:50363/Negocios.asmx?wsdl" />
+    <MetadataFile FileName="Negocios.disco" MetadataType="Disco" ID="a68f1e97-1304-4ca9-82e6-0ec457d6116f" SourceId="1" SourceUrl="http://localhost:50363/Negocios.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
